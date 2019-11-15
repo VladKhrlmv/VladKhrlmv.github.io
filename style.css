@@ -106,11 +106,13 @@ main {
 .container .card {
     position: relative;
     width: 300px;
-    height: 500px;
+    height: 600px;
     margin: 0 auto;
     background: #fff;
     transition: 0.5s;
+    
 }
+
 
 .container .card:hover {
     box-shadow: 0 30px 50px rgba(0,0,0, .2);
