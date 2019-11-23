@@ -27,16 +27,30 @@
                     <div class="content">
                             <div class="box">
                                 <ul>
-                                    <li><a href="https://VladKhrlmv.github.io/3d-background">3d-cheked background</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/ani_text">Text animation</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/clock">Clock</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/circles-up-down">Animated circles</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/endless-road">Endless road</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/heart">Heart</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/neon_button">Neon button animation</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/mosaic-pattern">Mosaic pattern</a></li>
-                                    <li><a href="https://VladKhrlmv.github.io/Tic-Toc">TicToc</a></li>
+                                    <div class="anim--opt1">
+                                        <li><a href="https://VladKhrlmv.github.io/3d-background">3d-cheked background</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/ani_text">Text animation</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/clock">Clock</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/circles-up-down">Animated circles</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/endless-road">Endless road</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/heart">Heart</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/neon_button">Neon button animation</a></li>
+                                    </div>
+                                    <div class="anim--opt2">
+                                        <li><a href="https://VladKhrlmv.github.io/mosaic-pattern">Mosaic pattern</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/Tic-Toc">TicToc</a></li>
+                                        <li><a href="https://VladKhrlmv.github.io/glitch-effect">Glitch effect</a></li>
+                                    </div>
+                                    
                                 </ul>
+                                
+
+                            </div>
+                            <div class="transition">
+                                <input type="radio" name="opts" class="invis" id="opt1" checked/>
+                                <label for="opt1" class="l--opt1">I</label>
+                                <input type="radio" name="opts" class="invis" id="opt2" />
+                                <label for="opt2" class="l--opt2">II</label>
                             </div>
                     </div>
                 </div>
@@ -87,5 +101,25 @@
     </footer>
     <script src="scroll.js"></script>
     <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            var deviceAgent = navigator.userAgent.toLowerCase();
+            var iOS = deviceAgent.match(/(iphone|ipod|ipad)/);
+            if (iOS) {
+                $('label').click(function (event) {
+                    $('#' + $(event.target).attr('for')).attr('checked', true).change();
+                });
+            }
+            $('.anim--opt2').slideUp(100);
+            $('#opt2').click(function() {
+                $('.anim--opt1').slideUp(1000);
+                $('.anim--opt2').slideDown(1000);
+            });
+            $('#opt1').click(function() {
+                $('.anim--opt2').slideUp(1000);
+                $('.anim--opt1').slideDown(1000);
+            });
+        });
+    </script>
 </body>
 </html>
