@@ -272,6 +272,7 @@ label {
   opacity: 0.5;
   margin-right: 20px;
   font-family: "Calistoga", cursive;
+  cursor: pointer;
 }
 
 .l--opt2 {
@@ -279,6 +280,8 @@ label {
   font-weight: 700;
   opacity: 0.5;
   font-family: "Calistoga", cursive;
+  cursor: pointer;
+
 }
 
 input[type="radio"]:checked + label {
