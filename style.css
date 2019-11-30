@@ -219,6 +219,8 @@ main {
   opacity: 1;
 }
 
+
+
 .box ul li::before {
   content: counter(li); /* В качестве данных используем счетчик */
   counter-increment: li; /* Увеличиваем значение счетчика на 1 */

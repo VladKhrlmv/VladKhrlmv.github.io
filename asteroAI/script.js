@@ -1,4 +1,4 @@
-const FPS = 30; //frames per second
+const FPS = 120; //frames per second
 const FRICTION = 0.7; //
 const ROID_NUM = 3; // starting number of asteroids
 const LASER_DIST = 0.6; // max distance laser could travel as fraction of screen width
@@ -25,7 +25,7 @@ const ROID_PTS_MED = 50; // points scored for large asteroid
 const ROID_PTS_SML = 100; // points scored for large asteroid
 
 // developer flags
-const AUTOMATION_ON = false;
+const AUTOMATION_ON = true;
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const SHOW_CENTRE_DOT = false; // show or hide centre dot
 const SOUND_ON = true; // points scored for large asteroid
@@ -38,7 +38,7 @@ const NUM_SAMPLES = 500000; // number of training samples
 const OUTPUT_LEFT = 0; // expected neural output for turning left
 const OUTPUT_RIGHT = 1; // expected neural output for turning right
 const OUTPUT_THRESHOLD = 0.05; // how close the prediction must be to commit to a turn
-const RATE_OF_FIRE = 15; // shots per second
+const RATE_OF_FIRE = 30; // shots per second
 
 
 
