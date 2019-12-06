@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+
+body {
+  font: 14px "PT Sans Narrow", sans-serif;
+  background: #080e24;
+  color: #626668;
+  overflow: hidden;
+}
+
+.solar-container {
+  width: 100vw;
+}
+
+/* солнечная система*/
+.solarsystem {
+  position: relative;
+  height: 640px;
+  width: 800px;
+  list-style: none;
+  transition: all 0.09s ease-in;
+  overflow: hidden;
+  float: left;
+}
+
+.solarsystem li {
+  text-indent: -9999px;
+  display: block;
+  position: absolute;
+  border: 2px solid #394057;
+}
+
+.solarsystem li span {
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.solarsystem .sun {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #fc3;
+  
+  top: 302px;
+  left: 462px;
+  border: none;
+  box-shadow: 0 0 50px #c90;
+  z-index: 100;
+  transition: all 0.2s ease-in;
+}
+
+.solarsystem .sun span {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+
+.solarsystem .mercury {
+  width: 100px;
+  height: 100px;
+  border-radius: 52px;
+  top: 270px;
+  left: 430px;
+  z-index: 99;
+}
+
+.solarsystem .mercury span {
+  background: #b6bac5;
+  top: 10px;
+  left: 10px;
+}
+
+
+.solarsystem .venus {
+  width: 160px;
+  height: 160px;
+   border-radius: 82px;
+  top: 240px;
+  left: 400px;
+  z-index: 98;
+}
+
+.solarsystem .venus span {
+  background: #bf8639;
+  top: 118px;
+  left: 5px;
+}
+
+
+.solarsystem .earth {
+  width: 220px;
+  height: 220px;
+   border-radius: 112px;
+  top: 210px;
+  left: 370px;
+  z-index: 97;
+}
+
+.solarsystem .earth span {
+  background: #06c;
+  top: 56px;
+  left: 5px;
+}
+
+
+.solarsystem .earth span.moon {
+  width: 4px;
+  height: 4px;
+   border-radius: 2px;
+  background: #ccc;
+  top: 12px;
+  left: 12px;
+}
+
+
+.solarsystem .mars {
+  width: 280px;
+  height: 280px;
+   border-radius: 142px;
+  top: 180px;
+  left: 340px;
+  z-index: 96;
+}
+
+.solarsystem .mars span {
+  background: #aa4200;
+  top: 0px;
+  left: 175px;
+}
+
+
+.solarsystem .asteroids_meteorids {
+  top: 155px;
+  left: 315px;
+  z-index: 1;
+  background: url(../images/asteroids_meteorids.png) no-repeat 0 0;
+  width: 330px;
+  height: 330px;
+  border-radius: 165px;
+  border: none;
+}
+
+
+.solarsystem .jupiter {
+  width: 340px;
+  height: 340px;
+  border-radius: 172px;
+  top: 150px;
+  left: 310px;
+  z-index: 95;
+}
+
+.solarsystem .jupiter span {
+  background: #e0ae6f;
+  top: 67px;
+  left: 24px;
+}
+
+
+.solarsystem .saturn {
+  width: 400px;
+  height: 400px;
+   border-radius: 202px;
+  top: 120px;
+  left: 280px;
+  z-index: 94;
+}
+
+.solarsystem .saturn span {
+  background: #dfd3a9;
+  top: 24px;
+  left: 300px;
+}
+
+.solarsystem .saturn span.ring {
+  width: 12px;
+  height: 12px;
+  border-radius: 8px;
+  background: none;
+  border: 2px solid #5a4e34;
+  left: -3px;
+  top: -3px;
+   transform: skewY(50deg);
+}
+
+
+.solarsystem .uranus {
+  width: 460px;
+  height: 460px;
+  border-radius: 232px;
+  top: 90px;
+  left: 250px;
+  z-index: 93;
+}
+
+.solarsystem .uranus span {
+  background: #82b3d1;
+  top: 7px;
+  left: 300px;
+}
+
+
+.solarsystem .neptune {
+  width: 520px;
+  height: 520px;
+  border-radius: 262px;
+  top: 60px;
+  left: 220px;
+  z-index: 92;
+}
+
+.solarsystem .neptune span {
+  background: #77c2ec;
+  top: 0px;
+  left: 200px;
+}
+
+
+.solarsystem .pluto {
+  width: 580px;
+  height: 580px;
+   border-radius: 292px;
+  top: 30px;
+  left: 190px;
+  z-index: 91;
+}
+
+.solarsystem .pluto span {
+  background: #7c6a5c;
+  top: 79px;
+  left: 79px;
+}
+
+
+#descriptions {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  list-style: none;
+}
+
+#descriptions h2 {
+  cursor: pointer;
+  color: #386077;
+  transition: all 0.15s ease-in;
+  font-size: 20px;
+  position: relative;
+  z-index: 101;
+  transform: scale(1);
+  /* margin-bottom: -15px; */
+}
+
+#descriptions h2#sun:hover {
+  color: #fc3;
+  transform: scale(1.08);
+}
+
+#descriptions h2#mercury:hover {
+  color: #b6bac5;
+  transform: scale(1.08);
+}
+
+#descriptions h2#venus:hover {
+  color: #bf8639;
+  transform: scale(1.08);
+}
+
+#descriptions h2#earth:hover {
+  color: #06c;
+  transform: scale(1.08);
+}
+
+#descriptions h2#mars:hover {
+  color: #aa4200;
+  transform: scale(1.08);
+}
+
+#descriptions h2#jupiter:hover {
+  color: #e0ae6f;
+  transform: scale(1.08);
+}
+
+#descriptions h2#saturn:hover {
+  color: #dfd3a9;
+  transform: scale(1.08);
+}
+
+#descriptions h2#uranus:hover {
+  color: #82b3d1;
+  transform: scale(1.08);
+}
+
+#descriptions h2#neptune:hover {
+  color: #77c2ec;
+  transform: scale(1.08);
+}
+
+#descriptions h2#pluto:hover {
+  color: #7c6a5c;
+  transform: scale(1.08);
+}
+
+#descriptions h2#moon:hover a {
+  color: #ccc;
+  transform: scale(1.08);
+  text-decoration: underline;
+}
+
+#descriptions h2#moon a {
+  text-decoration: none;
+  color: #386077;
+}
+
+#descriptions li p {
+  position: absolute;
+  left: -310px;
+  top: 0;
+  width: 300px;
+  display: inline;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  background: #0f132c;
+  padding: 30px;
+  color: #767892;
+  line-height: 1.7;
+  z-index: 100;
+  border: 1px solid #1c203c;
+  text-align: center;
+}
+
+#descriptions h2:hover + p {
+  visibility: visible;
+  opacity: 0.9;
+  left: -350px;
+}
+
+#descriptions #mars:hover + p {
+  visibility: visible;
+  opacity: 0.9;
+  left: -400px;
+  top:  -50px;
+  width: 350px;
+}
+
+/*анимация */
+.solarsystem li {
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   animation-name: orbit;
+
+}
+.solarsystem .earth span {
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   animation-name: moon;
+}
+.solarsystem .mercury {
+   animation-duration: 5s;
+}
+.solarsystem .venus {
+   animation-duration: 8s;
+}
+.solarsystem .earth {
+   animation-duration: 12s;
+}
+.solarsystem .earth span {
+   animation-duration: 2s;
+}
+.solarsystem .mars {
+   animation-duration: 20s;
+}
+.solarsystem .asteroids_meteorids {
+   animation-duration: 50s;
+}
+.solarsystem .jupiter {
+   animation-duration: 30s;
+}
+.solarsystem .saturn {
+   animation-duration: 60s;
+}
+.solarsystem .uranus {
+   animation-duration: 70s;
+}
+.solarsystem .neptune {
+   animation-duration: 100s;
+}
+.solarsystem .pluto {
+   animation-duration: 120s;
+}
+
+@keyframes orbit {
+  from {
+     transform: rotate(0deg);
+  }
+  to {
+     transform: rotate(360deg);
+  }
+}
+@keyframes moon {
+  from {
+     transform: rotate(0deg);
+  }
+  to {
+     transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  #descriptions{
+    top: 700px;
+    left: 70px;
+  }
+
+  #descriptions li p {
+    position: absolute;
+    left: 120px;
+    top: 0;
+    font-size: 13px;
+    width: 200px;
+  }
+
+  #descriptions h2:hover + p {
+    visibility: visible;
+    opacity: 0.9;
+    left: 150px;
+  }
+
+  body {
+    overflow-y:visible; 
+    overflow-x:hidden;
+  }
+
+  #descriptions #mars:hover + p {
+    visibility: visible;
+    opacity: 0.9;
+    left: 150px;
+    top: 0;
+    width: 200px;
+  }
+}
