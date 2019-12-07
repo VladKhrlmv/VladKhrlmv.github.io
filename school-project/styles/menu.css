@@ -125,14 +125,14 @@
 
 .menu > div > div > ul > li > a {
     text-decoration: none;
-    margin: 0.5rem;
+    margin: 10px;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 30px;
     font-weight: 800;
     text-transform: uppercase;
     color: #000;
     transition: 0.3s;
-
+    font-weight: 400;
 }
 
 .menu > div > div > ul > li > a:hover {
