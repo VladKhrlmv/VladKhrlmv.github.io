@@ -88,3 +88,9 @@ img:hover {
     margin-block-start: 0;
     padding-top: 100px;
 }
+
+@media screen and (max-width: 600px) {
+    video {
+        display: none;
+    }
+}
