@@ -93,4 +93,8 @@ img:hover {
     video {
         display: none;
     }
+
+    img:hover {
+        transform: scale(1.5) translateX(-20px);
+    }
 }
