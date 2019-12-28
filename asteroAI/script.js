@@ -31,8 +31,8 @@ const SHOW_CENTRE_DOT = false; // show or hide centre dot
 const SOUND_ON = true; // points scored for large asteroid
 
 // neural network parametres
-const NUM_INPUTS = 4;
-const NUM_HIDDEN = 20;
+const NUM_INPUTS = 6;
+const NUM_HIDDEN = 30;
 const NUM_OUTPUTS = 1;
 const NUM_SAMPLES = 500000; // number of training samples
 const OUTPUT_LEFT = 0; // expected neural output for turning left
@@ -84,8 +84,11 @@ if (AUTOMATION_ON) {
     // determine the direction to turn
     let direction = angle > Math.PI ? OUTPUT_LEFT : OUTPUT_RIGHT;
 
+    let vx = ((Math.random() * ROIDS_SPEED * (Math.random() * 40 + 10)) / FPS) * (Math.random() < 0.5 ? 1 : -1);
+    let vy = ((Math.random() * ROIDS_SPEED * (Math.random() * 40 + 10)) / FPS) * (Math.random() < 0.5 ? 1 : -1);
+
     // train the network
-    nn.train(normaliseInput(ax, ay, angle, sa), [direction]);
+    nn.train(normaliseInput(ax, ay, angle, sa, vx, vy), [direction]);
 
   }
     
@@ -287,13 +290,16 @@ function newShip() {
   };
 }
 
-function normaliseInput(roidX, roidY, roidA, shipA) {
+function normaliseInput(roidX, roidY, roidA, shipA, vx, vy) {
   // normalise the values to between 0 and 1
   let input = [];
   input[0] = (roidX + ROIDS_SIZE / 2) / (canv.width + ROIDS_SIZE);
   input[1] = (roidY + ROIDS_SIZE / 2) / (canv.height + ROIDS_SIZE);
   input[2] = roidA / (Math.PI * 2);
   input[3] = shipA / (Math.PI * 2);
+  input[4] = vx;
+  input[5] = vy;
+
   return input;
 }
 
@@ -421,7 +427,9 @@ function update() {
     let sx = ship.x;
     let sy = ship.y;
     let angle = angleToPoint(sx, sy, sa, ax, ay);
-    let predict = nn.feedForward(normaliseInput(ax, ay, angle, sa)).data[0][0];
+    let vx = roids[c].xv;
+    let vy = roids[c].yv;
+    let predict = nn.feedForward(normaliseInput(ax, ay, angle, sa, vx, vy)).data[0][0];
 
     // make a turn 
     let dLeft = Math.abs(predict - OUTPUT_LEFT);
