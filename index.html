@@ -48,10 +48,10 @@
 
                             </div>
                             <div class="transition">
-                                <input type="radio" name="opts" class="invis" id="opt1" checked/>
-                                <label for="opt1" class="l--opt1">I</label>
-                                <input type="radio" name="opts" class="invis" id="opt2" />
-                                <label for="opt2" class="l--opt2">II</label>
+                                <input type="radio" name="opts" class="invis" id="a-opt1" checked/>
+                                <label for="a-opt1" class="l--opt1">I</label>
+                                <input type="radio" name="opts" class="invis" id="a-opt2" />
+                                <label for="a-opt2" class="l--opt2">II</label>
                             </div>
                     </div>
                 </div>
@@ -64,15 +64,26 @@
                     <div class="content">
                         <div class="box">
                             <ul>
-                                <li><a href="https://VladKhrlmv.github.io/background-slider">Background slider</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/calculator">Calculator</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/minipiano">Minipiano</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/opa-background">Translucent background</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/sound_and_blocks">Sound and blocks</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/weather_app">Weather(live)</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/count-days-to-new-year">NY counter</a></li>
-                                <li><a href="https://VladKhrlmv.github.io/school-project">School project</a></li>
+                                <div class="use--opt1">
+                                    <li><a href="https://VladKhrlmv.github.io/background-slider">Background slider</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/calculator">Calculator</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/minipiano">Minipiano</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/opa-background">Translucent background</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/sound_and_blocks">Sound and blocks</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/weather_app">Weather(live)</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/count-days-to-new-year">NY counter</a></li>
+                                </div>
+                                <div class="use--opt2">
+                                    <li><a href="https://VladKhrlmv.github.io/school-project">School project</a></li>
+                                    <li><a href="https://VladKhrlmv.github.io/Mobile">Mobile</a></li>
+                                </div>
                             </ul>
+                        </div>
+                        <div class="transition">
+                            <input type="radio" name="opts" class="invis" id="u-opt1" checked/>
+                            <label for="u-opt1" class="l--opt1">I</label>
+                            <input type="radio" name="opts" class="invis" id="u-opt2" />
+                            <label for="u-opt2" class="l--opt2">II</label>
                         </div>
                     </div>
                 </div>
@@ -117,13 +128,22 @@
                 });
             }
             $('.anim--opt2').slideUp(100);
-            $('#opt2').click(function() {
+            $('.use--opt2').slideUp(100);
+            $('#a-opt2').click(function() {
                 $('.anim--opt1').slideUp(1000);
                 $('.anim--opt2').slideDown(1000);
             });
-            $('#opt1').click(function() {
+            $('#a-opt1').click(function() {
                 $('.anim--opt2').slideUp(1000);
                 $('.anim--opt1').slideDown(1000);
+            });
+            $('#u-opt2').click(function() {
+                $('.use--opt1').slideUp(1000);
+                $('.use--opt2').slideDown(1000);
+            });
+            $('#u-opt1').click(function() {
+                $('.use--opt2').slideUp(1000);
+                $('.use--opt1').slideDown(1000);
             });
         });
     </script>

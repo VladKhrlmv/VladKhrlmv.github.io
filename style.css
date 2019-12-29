@@ -251,6 +251,10 @@ main {
   counter-reset: li 7;
 }
 
+.use--opt2 {
+  counter-reset: li 7;
+}
+
 .transition {
   position: absolute;
   bottom: 20px;
