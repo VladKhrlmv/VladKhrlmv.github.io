@@ -4,6 +4,7 @@ const FPS = 60;
 const cvs = document.getElementById("pong");
 const ctx = cvs.getContext("2d");
 
+let computerLevel = 0.03;
 // create the user paddle
 const user = {
     x: 0,
@@ -103,6 +104,16 @@ function movePaddle(evt) {
     user.y = evt.clientY - rect.top - user.height / 2;
 }
 
+if(window.DeviceMotionEvent){
+    window.addEventListener("devicemotion", motion, false);
+  }
+
+  function motion(ev){
+    let rect = cvs.getBoundingClientRect();
+
+    user.y = ev.accelerationIncludingGravity.y - rect.top - user.height / 2;
+  }
+
 // collision detection
 function collision(b , p) {
     b.top = b.y - b.radius;
@@ -127,14 +138,15 @@ function resetBall() {
     ball.vx = -ball.vx;
 }
 
+
+
 // update : pos, mov, score...
 function update() {
     ball.x += ball.vx;
     ball.y += ball.vy;
 
     // simple AI to control the com paddle
-    let computerLevel = 0.1;
-    com.y += (ball.y - (com.y +com.height / 2)) * computerLevel;
+    com.y += (ball.y - (com.y + com.height / 2)) * computerLevel;
 
     if(ball.y + ball.radius > cvs.height || ball.y - ball.radius < 0) {
         ball.vy = -ball.vy;
@@ -170,6 +182,7 @@ function update() {
     } else if (ball.x + ball.radius > cvs.width) {
         // the user win
         user.score++;
+        computerLevel += 0.005;
         resetBall();
     }
 }
