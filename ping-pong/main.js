@@ -1,5 +1,5 @@
 const FPS = 60;
-const THRUST = 10;
+const THRUST = 20;
 
 //select the canvas
 const cvs = document.getElementById("pong");
@@ -102,14 +102,15 @@ window.addEventListener('devicemotion', movePaddleTel);
 
 function movePaddle(evt) {
     let rect = cvs.getBoundingClientRect();
-
-    user.y = evt.clientY - rect.top - user.height / 2;
+    if((evt.clientY - rect.top + user.height / 2 < cvs.height) && (evt.clientY - user.height / 2 - rect.top > 0))
+        user.y = evt.clientY - rect.top - user.height / 2;
 }
 
 function movePaddleTel(e) {
+    let rect = cvs.getBoundingClientRect();
     let ag = e.accelerationIncludingGravity;
-    if((user.y + user.height / 2 < cvs.height) && (user.y - user.height / 2 > 0))
-    user.y = cvs.height / 2 - 50 + ag.y * THRUST;
+    if((user.y - rect.top + user.height / 2 < cvs.height) && (user.y - user.height / 2 - rect.top > 0))
+        user.y = cvs.height / 2 - 50 + ag.y * THRUST;
 }
 
 // collision detection
@@ -146,7 +147,7 @@ function update() {
     // simple AI to control the com paddle
     com.y += (ball.y - (com.y + com.height / 2)) * computerLevel;
 
-    if(ball.y + ball.radius > cvs.height || ball.y - ball.radius < 0) {
+    if(ball.y + ball.radius >= cvs.height || ball.y - ball.radius <= 0) {
         ball.vy = -ball.vy;
     }
 
