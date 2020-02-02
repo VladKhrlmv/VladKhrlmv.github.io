@@ -1,4 +1,5 @@
 const FPS = 60;
+const THRUST = 10;
 
 //select the canvas
 const cvs = document.getElementById("pong");
@@ -97,6 +98,7 @@ function render() {
 
 // control the user paddle
 cvs.addEventListener('mousemove', movePaddle);
+window.addEventListener('devicemotion', movePaddleTel);
 
 function movePaddle(evt) {
     let rect = cvs.getBoundingClientRect();
@@ -104,15 +106,11 @@ function movePaddle(evt) {
     user.y = evt.clientY - rect.top - user.height / 2;
 }
 
-if(window.DeviceMotionEvent){
-    window.addEventListener("devicemotion", motion, false);
-  }
-
-  function motion(ev){
-    let rect = cvs.getBoundingClientRect();
-
-    user.y = ev.accelerationIncludingGravity.y - rect.top - user.height / 2;
-  }
+function movePaddleTel(e) {
+    let ag = e.accelerationIncludingGravity;
+    if((user.y + user.height / 2 < cvs.height) && (user.y - user.height / 2 > 0))
+    user.y = cvs.height / 2 - 50 + ag.y * THRUST;
+}
 
 // collision detection
 function collision(b , p) {

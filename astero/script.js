@@ -1,34 +1,33 @@
 const FPS = 30; //frames per second
-const FRICTION = 0.7; //
+const FRICTION = 0.7;
 const ROID_NUM = 3; // starting number of asteroids
 const LASER_DIST = 0.6; // max distance laser could travel as fraction of screen width
 const LASER_EXPLODE_DUR = 0.1; // duration of the lasers' explosion
 const LASER_MAX = 10; // maximum number of lasers on screen at once
 const LASER_SPD = 500; // speed of lasers in pps 
-const ROIDS_JAG = 0.4; //jaggadness
+const ROIDS_JAG = 0.4; //jaggedness
 const ROIDS_SIZE = 100; // starting size of asteroids
 const ROIDS_SPEED = 50; //max starting speed of asteroids
 const ROID_VERT = 10;
 const SHIP_SIZE = 30; // ship height in pixels
 const SHIP_THRUST = 5; //acceleration of the ship in pps
-const SAVE_KEY_SCORE = "highscore"; // save key for local storage
 const TURN_SPEED = 360;
 const SHIP_EXPLODE_DUR = 0.3; // duration of the ship explosion
 const SHIP_INV_DUR = 3; // duration of the ship invisibility
 const SHIP_BLINK_DUR = 0.1; // duration of the ship blinks during invisibility
-const BETA_PLAY = false;
 const TEXT_FADE_TIME = 2.5; // text fade time in seconds
 const TEXT_SIZE = 50; // text font size height in pixels
 const GAME_LIVES = 4; // starting number of lives
 const ROID_PTS_LGE = 20; // points scored for large asteroid
 const ROID_PTS_MED = 50; // points scored for large asteroid
 const ROID_PTS_SML = 100; // points scored for large asteroid
+const SAVE_KEY_SCORE = "highscore"; // save key for local storage
 
 // developer flags
 const AUTOMATION_ON = false;
 const SHOW_BOUNDING = false; // show or hide collision bounding
 const SHOW_CENTRE_DOT = false; // show or hide centre dot
-const SOUND_ON = true; // points scored for large asteroid
+const SOUND_ON = false; // points scored for large asteroid
 
 // neural network parametres
 const NUM_INPUTS = 4;
