@@ -108,8 +108,8 @@ function movePaddle(evt) {
 
 function movePaddleTel(e) {
     let ag = e.accelerationIncludingGravity;
-    if((user.y < cvs.height) && (user.y > 0))
-        user.y = cvs.height / 2 + ag.y * THRUST;
+    if((user.y < cvs.height + 20) && (user.y + 20 > 0))
+        user.y = cvs.height / 2 + Math.ceil(ag.y) * THRUST;
 }
 
 // collision detection
@@ -136,7 +136,8 @@ function resetBall() {
     ball.vx = -ball.vx;
 }
 
-
+let c1 = true;
+let c2 = true;
 
 // update : pos, mov, score...
 function update() {
@@ -146,7 +147,14 @@ function update() {
     // simple AI to control the com paddle
     com.y += (ball.y - (com.y + com.height / 2)) * computerLevel;
 
-    if(ball.y + ball.radius >= cvs.height || ball.y - ball.radius <= 0) {
+    if(ball.y - ball.radius <= 0 && c2) {
+        c1 = true;
+        c2 = false;
+        ball.vy = -ball.vy;
+    }
+    if(ball.y + ball.radius >= cvs.height && c1) {
+        c1 = false;
+        c2 = true;
         ball.vy = -ball.vy;
     }
 
@@ -170,6 +178,8 @@ function update() {
 
         // every time the ball hit a paddle, we encrese its speed
         ball.speed += 0.1;
+        c1 = true;
+        c2 = true;
     }
 
     // update the score
