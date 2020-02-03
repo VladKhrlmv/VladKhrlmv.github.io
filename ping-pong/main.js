@@ -119,8 +119,8 @@ function movePaddle(evt) {
 
 function movePaddleTel(e) {
     let ag = e.accelerationIncludingGravity;
-    if((user.y + user.height < cvs.height ) && (user.y - user.height > 0))
-        user.y = cvs.height / 2 - user.height / 2 + Math.ceil(ag.y * THRUST);
+
+    user.y = cvs.height / 2 - user.height / 2 + Math.ceil(ag.y * THRUST);
 }
 
 // collision detection
