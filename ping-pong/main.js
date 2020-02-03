@@ -5,13 +5,24 @@ const THRUST = 20;
 const cvs = document.getElementById("pong");
 const ctx = cvs.getContext("2d");
 
+let k = 10;
+
+if(document.documentElement.clientWidth < 450 && document.documentElement.clientHeight < 700) {
+    cvs.height = document.documentElement.clientWidth * 0.75;
+    cvs.width = document.documentElement.clientHeight * 0.8;
+    k = 7;
+}
+
+console.log(cvs.width);
+console.log(cvs.height);
+
 let computerLevel = 0.03;
 // create the user paddle
 const user = {
     x: 0,
     y: cvs.height / 2 - 50,
-    width: 10,
-    height: 100,
+    width: cvs.width / 60,
+    height: cvs.height / 4,
     color: 'white',
     score: 0
 
@@ -19,10 +30,10 @@ const user = {
 
 // create the com paddle
 const com = {
-    x: cvs.width - 10,
+    x: cvs.width - k,
     y: cvs.height / 2 - 50,
-    width: 10,
-    height: 100,
+    width: cvs.width / 60,
+    height: cvs.height / 4,
     color: 'white',
     score: 0
 
@@ -41,10 +52,10 @@ const net = {
 const ball = {
     x: cvs.width / 2,
     y: cvs.height / 2,
-    radius: 10,
-    speed: 5,
-    vx: 5,
-    vy: 5,
+    radius: user.width,
+    speed: user.width / 2,
+    vx: user.width / 2,
+    vy: user.width / 2,
     color: 'white'
 };
 
@@ -108,8 +119,8 @@ function movePaddle(evt) {
 
 function movePaddleTel(e) {
     let ag = e.accelerationIncludingGravity;
-    if((user.y < cvs.height + 20) && (user.y + 20 > 0))
-        user.y = cvs.height / 2 + Math.ceil(ag.y) * THRUST;
+    if((user.y + user.height / 2 < cvs.height + 20) && (user.y - user.height / 2 + 20 > 0))
+        user.y = cvs.height / 2 - user.height / 2 + Math.ceil(ag.y * THRUST);
 }
 
 // collision detection
