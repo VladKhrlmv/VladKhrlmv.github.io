@@ -1,5 +1,5 @@
 const FPS = 60;
-const THRUST = 20;
+const THRUST = 21;
 
 //select the canvas
 const cvs = document.getElementById("pong");
@@ -120,7 +120,7 @@ function movePaddle(evt) {
 function movePaddleTel(e) {
     let ag = e.accelerationIncludingGravity;
 
-    user.y = cvs.height / 2 - user.height / 2 + Math.ceil(ag.y * THRUST);
+    user.y = cvs.height / 2 - user.height / 2 + ag.y * THRUST;
 }
 
 // collision detection
