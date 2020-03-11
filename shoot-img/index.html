@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Shoot img</title>
+</head>
+<body>
+    <section>
+        <input type="file" id="file" accept="image/*" onchange="loadFile(event)" class="inputfile">
+        <label for="file">Choose a file</label>
+    </section>
+    <script type="text/javascript">
+        var loadFile = function(event) {
+            var output = document.querySelector('section');
+            output.style.backgroundImage= "url("+URL.createObjectURL(event.target.files[0])+")";
+        };
+
+
+        document.addEventListener("click", function(e) {
+            var body = document.querySelector('body');
+            var bullet = document.createElement('span');
+            var x = e.offsetX;
+            var y = e.offsetY;
+            bullet.style.left = x + 'px';
+            bullet.style.top = y + 'px';
+            body.appendChild(bullet);
+        })
+    </script>
+</body>
+</html>
