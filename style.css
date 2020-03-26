@@ -250,6 +250,9 @@ main {
 .anim--opt2 {
   counter-reset: li 7;
 }
+.anim--opt3 {
+  counter-reset: li 14;
+}
 
 .use--opt2 {
   counter-reset: li 7;
@@ -272,7 +275,7 @@ label {
   height: 20px;
 }
 
-.l--opt1 {
+.l--opt {
   font-size: 25px;
   font-weight: 700;
   opacity: 0.5;
@@ -281,14 +284,7 @@ label {
   cursor: pointer;
 }
 
-.l--opt2 {
-  font-size: 25px;
-  font-weight: 700;
-  opacity: 0.5;
-  font-family: "Calistoga", cursive;
-  cursor: pointer;
 
-}
 
 input[type="radio"]:checked + label {
   opacity: 1;

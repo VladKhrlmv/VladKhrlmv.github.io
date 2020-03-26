@@ -45,6 +45,9 @@
                                         <li><a href="https://VladKhrlmv.github.io/glowing-gradient-loader">Glowing gradient loader</a></li>
                                         <li><a href="https://VladKhrlmv.github.io/snake-border">Snake border</a></li>
                                     </div>
+                                    <div class="anim--opt3">
+                                        <li><a href="https://VladKhrlmv.github.io/ripple-effect">Ripple effect</a></li>
+                                    </div>
                                     
                                 </ul>
                                 
@@ -52,9 +55,11 @@
                             </div>
                             <div class="transition">
                                 <input type="radio" name="opts" class="invis" id="a-opt1" checked/>
-                                <label for="a-opt1" class="l--opt1">I</label>
+                                <label for="a-opt1" class="l--opt">I</label>
                                 <input type="radio" name="opts" class="invis" id="a-opt2" />
-                                <label for="a-opt2" class="l--opt2">II</label>
+                                <label for="a-opt2" class="l--opt">II</label>
+                                <input type="radio" name="opts" class="invis" id="a-opt3" />
+                                <label for="a-opt3" class="l--opt">III</label>
                             </div>
                     </div>
                 </div>
@@ -132,13 +137,21 @@
                 });
             }
             $('.anim--opt2').slideUp(100);
+            $('.anim--opt3').slideUp(100);
             $('.use--opt2').slideUp(100);
             $('#a-opt2').click(function() {
                 $('.anim--opt1').slideUp(1000);
+                $('.anim--opt3').slideUp(1000);
                 $('.anim--opt2').slideDown(1000);
+            });
+            $('#a-opt3').click(function() {
+                $('.anim--opt1').slideUp(1000);
+                $('.anim--opt2').slideUp(1000);
+                $('.anim--opt3').slideDown(1000);
             });
             $('#a-opt1').click(function() {
                 $('.anim--opt2').slideUp(1000);
+                $('.anim--opt3').slideUp(1000);
                 $('.anim--opt1').slideDown(1000);
             });
             $('#u-opt2').click(function() {
