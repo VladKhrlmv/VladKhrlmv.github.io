@@ -1,0 +1,56 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container
+{
+    display: flex;
+}
+
+.grid
+{
+    width: 200px;
+    height: 400px;
+    background: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid div
+{
+    width: 20px;
+    height: 20px;
+}
+
+.tetromino
+{
+    background: darkblue;
+}
+
+.mini-grid
+{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background: gold;
+    margin-left: 10px;
+}
+
+.mini-grid div 
+{
+    width: 20px;
+    height: 20px;
+}
