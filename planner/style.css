@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+body {
+	text-align: center;
+	margin: 10;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 16px;
+}
+h1 {
+	font-weight: bold;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 22px;
+	font-family: "Anton", sans-serif;
+	text-align: center;
+}
+input {
+	display: inline-block;
+	margin: 20px auto;
+	border: 2px solid #eee;
+	padding: 10px 20px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 16px;
+	word-wrap: normal;
+}
+.tdItem {
+	text-align: left;
+	padding: 10px;
+	cursor: default;
+	border-radius: 7px;
+}
+.tdItem:hover {
+	background-color: lightblue;
+}

@@ -1,27 +1,29 @@
-const RADIUS = 0.05;
+const RADIUS = 0.1;
 const FPS = 1000;
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
 ctx.fillRect(0, 0, canvas.width, canvas.height);
+const width = canvas.width;
+const height = canvas.height;
 ctx.fillStyle = "white";
 
 // Initial points
 const A = createDot(
-  Math.random() * 400 + 400,
-  Math.random() * 100 + 50,
-  RADIUS + 3
+  Math.random() * (width - 100) / 3 + (width - 100) / 3,
+  Math.random() * (height - 100) / 3 + 100,
+  RADIUS + 7
 );
 const B = createDot(
-  Math.random() * 400 + 50,
-  Math.random() * 250 + 350,
-  RADIUS + 3
+  Math.random() * (width - 100) / 3 + 100,
+  Math.random() * (height - 100) / 3 + (height - 100) * 2 / 3,
+  RADIUS + 7
 );
 const C = createDot(
-  Math.random() * 400 + 800,
-  Math.random() * 250 + 350,
-  RADIUS + 3
+  Math.random() * (width - 100) / 3 + (width - 100) * 2 / 3,
+  Math.random() * (height - 100) / 3 + (height - 100) * 2 / 3,
+  RADIUS + 7
 );
 
 function createDot(x, y, r) {
@@ -37,8 +39,8 @@ function createDot(x, y, r) {
 }
 
 let currentDot = createDot(
-  Math.random() * 1100 + 20,
-  Math.random() * 500 + 20,
+  Math.random() * width + 20,
+  Math.random() * height + 20,
   RADIUS
 );
 

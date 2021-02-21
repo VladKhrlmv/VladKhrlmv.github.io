@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<title>TODO List</title>
+	</head>
+	<body>
+		<div class="container-fluid mt-3 mb-5">
+			<div class="row">
+				<div class="col-12">
+					<h1>Managing myself and my tasks</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+					<h2 class="todo__caption">urgent</h2>
+					<div id="tdl1App">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="New task"
+							list-number="1"
+						/>
+						<div class="tdl1Div">
+							<ul class="List"></ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+					<h2 class="todo__caption">regular</h2>
+					<div id="tdl2App">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="New task"
+							list-number="2"
+						/>
+						<div class="tdl2Div">
+							<ul class="List"></ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+					<h2 class="todo__caption">constantly</h2>
+					<div id="tdl3App">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="New task"
+							list-number="3"
+						/>
+						<div class="tdl3Div">
+							<ul class="List"></ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+					<h2 class="todo__caption">ideas</h2>
+					<div id="tdl4App">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="New task"
+							list-number="4"
+						/>
+						<div class="tdl4Div">
+							<ul class="List"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>

@@ -18,7 +18,6 @@ class NeuralNetwork {
         // error logging
         this._logCount = LOG_FREQ;
 
-
         // randomise the initial weights
         this._bias0.randomWeights();
         this._bias1.randomWeights();
@@ -89,12 +88,12 @@ class NeuralNetwork {
         // find the hidden values and apply the activation function
         this.hidden = Matrix.dot(this.inputs, this.weights0);
         this.hidden = Matrix.add(this.hidden, this.bias0); // apply bias
-        this.hidden = Matrix.map(this.hidden, x => sigmoid(x));
+        this.hidden = Matrix.map(this.hidden, (x) => sigmoid(x));
 
         // find the output values and apply the activation function
         let outputs = Matrix.dot(this.hidden, this.weights1);
         outputs = Matrix.add(outputs, this.bias1); // apply bias
-        outputs = Matrix.map(outputs, x => sigmoid(x));
+        outputs = Matrix.map(outputs, (x) => sigmoid(x));
 
         return outputs;
     }
@@ -119,7 +118,7 @@ class NeuralNetwork {
         }
 
         // calculate the deltas (errors * derivitive of the output)
-        let outputDerivs = Matrix.map(outputs, x => sigmoid(x, true));
+        let outputDerivs = Matrix.map(outputs, (x) => sigmoid(x, true));
         let outputDeltas = Matrix.multiply(outputErrors, outputDerivs);
 
         // calculate hidden layer errors (deltas "dot" transpose of weights1)
@@ -127,20 +126,24 @@ class NeuralNetwork {
         let hiddenErrors = Matrix.dot(outputDeltas, weights1T);
 
         // calculate the hidden deltas (errors * derivitive of hidden)
-        let hiddenDerivs = Matrix.map(this.hidden, x => sigmoid(x, true));
+        let hiddenDerivs = Matrix.map(this.hidden, (x) => sigmoid(x, true));
         let hiddenDeltas = Matrix.multiply(hiddenErrors, hiddenDerivs);
-        
 
         // update the weights (add transpose of layers "dot" deltas)
         let hiddenT = Matrix.transpose(this.hidden);
-        this.weights1 = Matrix.add(this.weights1, Matrix.dot(hiddenT, outputDeltas));
+        this.weights1 = Matrix.add(
+            this.weights1,
+            Matrix.dot(hiddenT, outputDeltas)
+        );
         let inputsT = Matrix.transpose(this.inputs);
-        this.weights0 = Matrix.add(this.weights0, Matrix.dot(inputsT, hiddenDeltas));
+        this.weights0 = Matrix.add(
+            this.weights0,
+            Matrix.dot(inputsT, hiddenDeltas)
+        );
 
         // update bias
         this.bias1 = Matrix.add(this.bias1, outputDeltas);
         this.bias0 = Matrix.add(this.bias0, hiddenDeltas);
-        
     }
 }
 
@@ -217,7 +220,7 @@ class Matrix {
     // dot product of two matrices
     static dot(m0, m1) {
         if (m0.cols != m1.rows) {
-            throw new Error("Matrices are not \"dot\" compatible!");
+            throw new Error('Matrices are not "dot" compatible!');
         }
         let m = new Matrix(m0.rows, m1.cols);
         for (let i = 0; i < m.rows; i++) {
